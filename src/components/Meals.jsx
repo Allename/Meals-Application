@@ -4,7 +4,13 @@ import { useGlobalContext } from "../context"
 import {BsHandThumbsUp} from 'react-icons/bs';
 
 const Meals = () => {
-  const {meals} = useGlobalContext();
+  const {meals, loading} = useGlobalContext();
+
+  if(loading) {
+    return <Loading>
+      <h4>Loading....</h4>
+    </Loading>
+  }
 
   return <StyledMeals>
     {meals.map((singleMeal) => {
@@ -21,6 +27,13 @@ const Meals = () => {
     })}
   </StyledMeals>
 }
+
+export const Loading = styled.section`
+  padding: 3rem 0;
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+`;
 
 const StyledMeals = styled.section`
   padding: 3rem 0;
