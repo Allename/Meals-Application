@@ -1,9 +1,10 @@
+import styled from "styled-components";
 import { useGlobalContext } from "../context"
 
 const Meals = () => {
   const {meals} = useGlobalContext();
 
-  return <section>
+  return <StyledMeals>
     {meals.map((singleMeal) => {
       const {idMeal:id, strMeal:title, strMealThumb:image} = singleMeal;
       return (
@@ -16,7 +17,16 @@ const Meals = () => {
         </article>
       );
     })}
-  </section>
+  </StyledMeals>
 }
+
+const StyledMeals = styled.section`
+  padding: 3rem 0;
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+`;
 
 export default Meals;
