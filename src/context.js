@@ -26,11 +26,15 @@ const AppProvider = ({children}) => {
     setLoading(false)
   }
 
+  const fetchRandomMeal = () => {
+    fetchMeals(randomMealUrl);
+  }
+
   useEffect(() => {
     fetchMeals(`${allMealsUrl}${searchTerm}`)
   }, [searchTerm])
 
-  return <AppContext.Provider value={{loading, meals, setSearchTerm}}>
+  return <AppContext.Provider value={{loading, meals, setSearchTerm, fetchRandomMeal}}>
     {children}
   </AppContext.Provider>
 }
