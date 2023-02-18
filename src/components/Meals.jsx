@@ -35,11 +35,7 @@ export const Loading = styled.section`
   margin: 0 auto;
 `;
 
-const StyledMeals = styled.section`
-  padding: 3rem 0;
-  width: var(--view-width);
-  max-width: var(--max-width);
-  margin: 0 auto;
+const StyledMeals = styled(Loading)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
