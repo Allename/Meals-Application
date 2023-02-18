@@ -28,14 +28,19 @@ const Meals = () => {
   </StyledMeals>
 }
 
-export const Loading = styled.section`
+const sharedStyles = `
   padding: 3rem 0;
   width: var(--view-width);
   max-width: var(--max-width);
   margin: 0 auto;
 `;
 
+export const Loading = styled.section`
+  ${sharedStyles}
+`;
+
 const StyledMeals = styled(Loading)`
+  ${sharedStyles}
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
