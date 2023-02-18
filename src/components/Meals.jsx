@@ -12,6 +12,12 @@ const Meals = () => {
     </Loading>
   }
 
+  if(meals.length < 1) {
+    return <NoMeals>
+      <h4>No meals matched your search term. Please try again</h4>
+    </NoMeals>
+  }
+
   return <StyledMeals>
     {meals.map((singleMeal) => {
       const {idMeal:id, strMeal:title, strMealThumb:image} = singleMeal;
@@ -36,6 +42,10 @@ const sharedStyles = `
 `;
 
 const Loading = styled.section`
+  ${sharedStyles}
+`;
+
+const NoMeals = styled.section`
   ${sharedStyles}
 `;
 
