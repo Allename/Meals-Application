@@ -29,7 +29,7 @@ const Search = () => {
         className='form-input'
       />
       <button type="submit" className='btn'>Search</button>
-      <button type="submit" className='btn btn-hipster'>Surprise Me!</button>
+      <button type="button" className='btn btn-hipster'>Surprise Me!</button>
     </form>
   </StyledSearch>
 }
