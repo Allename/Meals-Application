@@ -35,11 +35,11 @@ const sharedStyles = `
   margin: 0 auto;
 `;
 
-export const Loading = styled.section`
+const Loading = styled.section`
   ${sharedStyles}
 `;
 
-const StyledMeals = styled(Loading)`
+const StyledMeals = styled.section`
   ${sharedStyles}
   display: grid;
   grid-template-columns: repeat(3, 1fr);
