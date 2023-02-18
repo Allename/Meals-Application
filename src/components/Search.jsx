@@ -8,7 +8,7 @@ const Search = () => {
         placeholder="type favorite meal"
         className='form-input'
       />
-      <button type="submit">Search</button>
+      <button type="submit" className='btn'>Search</button>
       <button type="submit" className='btn btn-hipster'>Surprise Me!</button>
     </form>
   </StyledSearch>
