@@ -1,11 +1,24 @@
+import { useState } from "react";
 import styled from "styled-components"
 
 const Search = () => {
+  const [text, setText] = useState('');
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
+
   return <StyledSearch>
-    <form>
+    <form onSubmit={handleSubmit}>
       <input 
         type="text"
         placeholder="type favorite meal"
+        value={text}
+        onChange={handleChange}
         className='form-input'
       />
       <button type="submit" className='btn'>Search</button>
