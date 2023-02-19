@@ -3,7 +3,7 @@ import { useGlobalContext } from "./context";
 import { GlobalStyle } from "./styles/globalStyles";
 
 function App() {
-  const {showModal} = useGlobalContext;
+  const {showModal} = useGlobalContext();
 
   return (
     <div className="App">
