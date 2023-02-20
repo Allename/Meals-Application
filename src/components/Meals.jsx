@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { device } from "../breakpoint";
 import { useGlobalContext } from "../context"
 import {BsHandThumbsUp} from 'react-icons/bs';
 
@@ -23,7 +22,7 @@ const Meals = () => {
       const {idMeal:id, strMeal:title, strMealThumb:image} = singleMeal;
       return (
         <article key={id} className='single-meal'>
-          <img src={image} className="img" onClick={() => selectMeal(id)}/>
+          <img src={image} className="img" alt={title} onClick={() => selectMeal(id)}/>
           <footer>
             <h5>{title}</h5>
             <button className='like-btn' onClick={() => addToFavorites(id)}><BsHandThumbsUp/></button>
