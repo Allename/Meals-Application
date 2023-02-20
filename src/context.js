@@ -39,6 +39,10 @@ const AppProvider = ({children}) => {
     setShowModal(true);
   }
 
+  const closeModal = () => {
+    setShowModal(false);
+  }
+
   useEffect(() => {
     fetchMeals(allMealsUrl)
   }, [])
@@ -48,7 +52,7 @@ const AppProvider = ({children}) => {
     fetchMeals(`${allMealsUrl}${searchTerm}`)
   }, [searchTerm])
 
-  return <AppContext.Provider value={{loading, meals, setSearchTerm, fetchRandomMeal, showModal, selectedMeal, selectMeal}}>
+  return <AppContext.Provider value={{loading, meals, setSearchTerm, fetchRandomMeal, showModal, selectedMeal, selectMeal, closeModal}}>
     {children}
   </AppContext.Provider>
 }
