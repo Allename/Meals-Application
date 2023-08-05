@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useGlobalContext } from "../context"
 import {BsHandThumbsUp} from 'react-icons/bs';
+import { device } from "../breakpoint";
 
 const Meals = () => {
   const {meals, loading, selectMeal, addToFavorites} = useGlobalContext();
@@ -53,6 +54,10 @@ const StyledMeals = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+
+  @media (${device.mobile}) {
+    grid-template-columns: 1fr;
+  }
 
   .single-meal {
     background: var(--white);
